@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Conservatory</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Our Project</a></li>
+							<li><a href="#one">Visualizations</a></li>
+							<li><a href="#two">Our Process</a></li>
+							<li><a href="#three">Fin</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>United States GDP Visualization</h1>
+							<p>Presented by the Conservatory.</p>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							
+							<div class="content">
+								<div class="inner">
+									
+
+
+									<h2>States Panel Data and Time Series</h2>
+									<p>Panel Data with dropdown of States.</p>
+
+									<!--States Panel Data and Time Series-->
+									<div class="row">
+
+										<!--Panel Data with dropdown of States-->
+										<div class="content">
+											<div class="inner">
+											<h5>SELECT State:</h5>
+											<select id="selDataset" onchange="optionChanged(this.value)"></select>
+											</div>
+										
+									</div>
+									
+										<!--Time Series Data-->
+										<div class="content">
+											<div class="inner">
+												<h4>State GDP Time Series</h4>
+
+											</div>
+											<div class="panel panel-primary">
+											<div class="panel-heading">
+												<h3 class="panel-title">State GDP Info</h3>
+											</div>
+											<div id="time-series-chart" style='height:100%; width: 100%;'></div>
+											</div>
+											<!--<div id="time-series-chart" style='overflow: auto; height:100%; width: 100%;'></div>-->
+										</div>
+									
+								</div>
+							</div>
+						</section>
+
+						<!--Bar Chart and Bubble Map with buttons for the different Years-->
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Exploring GDP by County</h2>
+									<p>Click Year to See Counties GDP.</p>
+									<select id="selYear"  onchange="updateBubble(this.value)"></select>
+								</div>
+							</div>
+							<div class="content">
+								<!--Top County GDP Data-->
+								<div class="panel panel-primary">
+								  <div class="panel-heading">
+									<h3 class="panel-title">Top County GDP Info</h3>
+								  </div>
+								  <div id="county-kpi" class="panel-body"></div>
+								</div>
+							  
+						   </div>
+						</section>
+
+						<section>
+							<div class="content">
+								<!--Top Counties-->
+								<div class="inner">
+									<h2>Top 10 Counties GDP</h2>
+
+									<div class="row">
+										  <!--Top Counties-->
+										 <div class="panel panel-primary">
+											 <div id="bar-chart"></div>
+										   </div>
+
+									<h2>Map of Top 10 Counties GDP</h2>
+
+									 <div class="row">
+										  <!--State Chloropleth with Counties GDP-->
+										  <div class="panel panel-primary">
+											 <div id="map-id"></div>
+										   </div>
+				
+									   </div>
+									 </div>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we did</h2>
+							<p>We created an interactive visualization dashboard of key economic indiciators of all US States and counties from Y2015 to Y2019 to better understand the economic valud being contributed to total GDP.</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Extract and Transform</h3>
+									<p>Data was extracted from the website of the US Bureau of Economic Activity (BEA) by API request.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Load</h3>
+									<p>We loaded transformed data into MongoDB, and transformed into JSON and then loaded into the database.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Visualizations</h3>
+									<p>We employed JavaScript and associated libraries such as D3.js, Leaflet.js, and Plotly.js. The data for the plots were retrieved from MongoDB via a Flask powered API. This dashboard was created to compare several chart types across different time periods. </p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Results</h3>
+									<p>The state with the highest GDP is California, and the county with the highest GDP is Los Angeles. From 2015 to 2019 the amount of GDP increased. California, New York, and Texas are leading states.</p>
+								</section>
+
+							</div>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Thank you</h2>
+							<p></p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Created by the Conservatory. </li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+
+			<!-- jQuery, then Popper.js, then Bootstrap JS -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			
+			<script src="https://d3js.org/d3.v5.js"></script>
+
+			<!-- Color Scale -->
+			<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+			<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+			<!-- <script  src="{{ url_for('static', filename='js/script.js') }}"></script>-->
+			<!--<script  src="{{ url_for('static', filename='js/d3app.js') }}"></script>-->
+		
+			<!--Plotly-->
+			<script  src="assets/js/plotlyScript.js"></script>	 
+			<script src="assets/js/jquery.min.js"></script> 
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+	</body>
+</html>
